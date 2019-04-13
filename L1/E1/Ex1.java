@@ -1,7 +1,7 @@
 import java.io.*;
 
 public class Ex1{
-    public static Boolean negativo(Double a){
+    public static Boolean negativo(double a){
         if(a<=0){
             return true;
         }else{
