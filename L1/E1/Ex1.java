@@ -18,7 +18,7 @@ public class Ex1{
                     System.out.println("Uma das medidas igual ou menor a zero");
                 }else{
                     if(args.length == 1){
-                        Objeto Circulo = new Objeto(a,null,null);
+                        Objeto Circulo = new Objeto(a,0.0,0.0);
                         System.out.printf("Area do circulo: %.2f unidades de medida",Circulo.iniciar());
                     }else if(args.length == 2){
 
@@ -26,7 +26,7 @@ public class Ex1{
                         if(negativo(b) == true){
                             System.out.println("Uma das medidas igual ou menor a zero");
                         }else{
-                            Objeto Retangulo = new Objeto(a,b,null);
+                            Objeto Retangulo = new Objeto(a,b,0.0);
                             System.out.printf("Area do Retangulo: %.2f unidades de medida",Retangulo.iniciar());
                         }
                     }else if(args.length == 3){
@@ -41,12 +41,10 @@ public class Ex1{
                                 System.out.println(Triangulo.gettriangulo());
                             }
                     }
-                    
                 }
             }catch(NumberFormatException e){
                 System.out.println("Entrada nao estritamente numerica");
             }
         }
-
     }
 }
