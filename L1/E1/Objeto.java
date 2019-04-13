@@ -4,22 +4,22 @@ public class Objeto{
     private double y;
     private double z;
 
-    public Objeto(Double a, Double b, Double c){
+    public Objeto(double a, double b, double c){
         this.x = a;
         this.y = b;
         this.z = c;
     }
-    public Double iniciar(){
+    public double iniciar(){
         return calcula(x,y,z);
     }
-    private static Double calcula(Double a,Double b,Double c){
-        Double area;
+    private static double calcula(double a,double b,double c){
+        double area;
         if(b == 0){
             area = Math.PI*(a*a);
         }else if(c == 0){
             area = a*b;
         }else{
-            Double p = (a + b + c)/2;
+            double p = (a + b + c)/2;
             area = Math.sqrt(p * (p-a) * (p-b) * (p-c));
         }
         return area;
