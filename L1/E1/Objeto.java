@@ -1,8 +1,8 @@
 import java.lang.Math;
 public class Objeto{
-    private Double x;
-    private Double y;
-    private Double z;
+    private double x;
+    private double y;
+    private double z;
 
     public Objeto(Double a, Double b, Double c){
         this.x = a;
@@ -12,24 +12,11 @@ public class Objeto{
     public Double iniciar(){
         return calcula(x,y,z);
     }
-    public String gettriangulo(){
-        if(!( x < (y+z) && y < (x+z) && z < (x+y))){
-			return "Nao e um triangulo";
-		}else{
-            if(x==y && x==z){
-				return "Triangulo equilatero";
-			}else if((x == y && x != z)||(y == z && z != x)||(x == z && z != y)){
-				return "Triangulo isoceles";
-			}else{
-				return "Triangulo escaleno";
-			}
-		}
-    }
     private static Double calcula(Double a,Double b,Double c){
         Double area;
-        if(b == null){
+        if(b == 0){
             area = Math.PI*(a*a);
-        }else if(c == null){
+        }else if(c == 0){
             area = a*b;
         }else{
             Double p = (a + b + c)/2;
@@ -37,6 +24,17 @@ public class Objeto{
         }
         return area;
     }
+    public String gettriangulo(){
+        if(!((Math.abs(y-z) < x && x < y+z) && (Math.abs(x-z) < y && y < x+z) && (Math.abs(x-y) < z && z < x+y))){
+			return "Nao e um triangulo.";
+        }else if((x == y) && (x == z)){
+			return "O triangulo e equilatero.";
+		}else if((x == y) || (x == z) || (y == z)){
+			return "O triangulo e isosceles.";
+		}else{
+			return "O triangulo e escaleno.";
+		}
+	}
     @Override
     public String toString(){
         return "Area: " + iniciar();
